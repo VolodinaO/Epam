@@ -20,14 +20,14 @@
       <tr>
         <td width="90%"  align="center">
           <font color=#618c5e>
-            Заголовок
+            ${getTitle}
           </font>
         </td>
       </tr>
       <tr>
         <td align="center">
           <font color=#618c5e>
-            Статья
+            ${getText}
           </font>
         </td>
       </tr>
@@ -42,7 +42,7 @@
         <td align="center">
           <p><b>Добавить комментарий</b></p>
           <p><textarea rows="8" cols="80" name="text"></textarea></p>
-          <form action="post.jsp" method="post">
+          <form action="Article.jsp" method="post">
             <p><input type="submit" value="Отправить"></p>
           </form>
           <form action="main.jsp" method="back">

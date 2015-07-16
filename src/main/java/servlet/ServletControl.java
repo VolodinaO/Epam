@@ -25,9 +25,9 @@ public class ServletControl extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
-        ArrayList<Table> listResults = tableA();
-        if (listResults != null) {
-        request.setAttribute("listResults", listResults);
+        ArrayList<Table> tables= tableA();
+        if (tables != null) {
+        request.setAttribute("listResults", tables);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
         dispatcher.forward(request, response);
         }

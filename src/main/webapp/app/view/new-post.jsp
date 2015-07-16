@@ -22,7 +22,7 @@
               <p><textarea rows="30" cols="80" name="reply" id="reply-input-article" class="rtext autosize focused" spellcheck="false" tabindex="1" maxlength="3000"></textarea></p>
           </div>
       </form>
-      <form action="post.jsp" method="create">
+      <form action="Article.jsp" method="create">
           <div>
               <p><input id="create" type="submit" value="Создать запись"></p>
           </div>

@@ -40,35 +40,26 @@
                         </font>
                     </td>
                 </tr>
-                <tr>
-                    <td>
                         <jsp:useBean id="listResults" class="java.util.ArrayList" scope="request"/>
                             <c:forEach items="${listResults}" var="cell">
                 <tr>
                     <td width="15%" align="center">
                         <font color=#618c5e>
-                            ${cell.getData}
+                            ${cell.getData()}
                         </font>
                     </td>
                     <td width="75%" align="center">
                         <font color=#618c5e>
-                            ${cell.getTitle}
+                            ${cell.getTitle()}
                         </font>
                     </td>
                     <td align="center">
-                        <font color=#618c5e>
-                            Ссылка
-                        </font>
-                    </td>
-                </tr>
-                            </c:forEach>
-                    </td>
-                    <td>
-                        <form action="post.jsp" method="go">
-                            <p><input id="go1" type="submit" value="Ссылка"></p>
+                        <form action="Article" method="go">
+                            <p><input id=${cell.getId()} type="submit" value="Перейти"></p>
                         </form>
                     </td>
                 </tr>
+                            </c:forEach>
             </font>
         </table>
     </center>

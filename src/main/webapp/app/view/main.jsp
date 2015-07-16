@@ -37,7 +37,7 @@
                     <td> ${time} </td>
                     <td>< ${title}></td>
                     <td>
-                        <form action="post.jsp" method="go">
+                        <form action="Article.jsp" method="go">
                             <p><input id="go1"  type="submit" value="Ссылка"></p>
                         </form>
                     </td>
@@ -46,7 +46,7 @@
                     <td>Uno</td>
                     <td>Uno</td>
                     <td>
-                        <form action="post.jsp" method="go">
+                        <form action="Article.jsp" method="go">
                             <p><input id="go2" type="submit" value="Ссылка"></p>
                         </form>
                     </td>
