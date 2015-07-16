@@ -40,8 +40,12 @@
           </td>
         </tr>
         <tr>
-          <td>${time}</td>
-          <td>${title}</td>
+          <td>
+          ${time}
+          </td>
+          <td>
+          ${title}
+          </td>
           <td>
             <form action="post.jsp" method="go">
               <p><input id="go1"  type="submit" value="Ссылка"></p>

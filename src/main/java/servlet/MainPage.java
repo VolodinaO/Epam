@@ -1,7 +1,9 @@
 package servlet;
 
+import model.Table;
 import model.TableGet;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,22 +15,19 @@ import java.sql.SQLException;
 /**
  * Created by ооо on 14.07.2015.
  */
-@WebServlet(name = "Blog")
+@WebServlet("/Blog")
 public class MainPage extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        try {
-            while (TableGet.resultSetA.next()) {
-                request.setAttribute("time", "TableDaoImpl.data");
-                request.setAttribute("title", "TableDaoImpl.title");
-                //request.setAttribute("Author", "author");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        response.setContentType("text/html");
+        request.setAttribute("time", "12.05.15");
+        String varTextB = "This is awesome servlet";
+        request.setAttribute("var", varTextB);
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+        dispatcher.forward(request, response);
     }
 }
