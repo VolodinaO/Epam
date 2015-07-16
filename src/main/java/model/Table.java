@@ -1,7 +1,6 @@
 package model;
 
 import java.io.Serializable;
-import java.security.PublicKey;
 
 /**
  * Created by ооо on 14.07.2015.
@@ -20,7 +19,18 @@ public class Table implements Serializable {
 
     }
 
-/*    public int getId{
+    public Table(String title, String text){
+        this.title = title;
+        this.text = text;
+    }
+
+    public Table(int idc, int num, String comm){
+        this.idc = idc;
+        this.num = num;
+        this.comm = comm;
+    }
+
+    public int getId(){
         return id;
     }
 
@@ -28,7 +38,7 @@ public class Table implements Serializable {
         this.id = id;
     }
 
-    public String getData{
+    public String getData(){
         return data;
     }
 
@@ -36,7 +46,7 @@ public class Table implements Serializable {
         this.data = data;
     }
 
-    public String getTitle{
+    public String getTitle(){
         return title;
     }
 
@@ -44,7 +54,7 @@ public class Table implements Serializable {
         this.title = title;
     }
 
-    public String getText{
+    public String getText(){
         return text;
     }
 
@@ -52,15 +62,15 @@ public class Table implements Serializable {
         this.text = text;
     }
 
-    public int getIdc{
+    public int getIdc(){
         return idc;
     }
 
-    public void setIdc(int idc) {
-        this.idc = idc;
+    public void setIdc(int id) {
+        this.idc = id;
     }
 
-    public int getNum{
+    public int getNum(){
         return num;
     }
 
@@ -68,11 +78,11 @@ public class Table implements Serializable {
         this.num = num;
     }
 
-    public String getComm{
+    public String getComm(){
         return comm;
     }
 
     public void setComm(String comm) {
         this.comm = comm;
-    }*/
+    }
 }

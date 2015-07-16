@@ -34,7 +34,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td> ${data} </td>
+                    <td> ${time} </td>
                     <td>< ${title}></td>
                     <td>
                         <form action="post.jsp" method="go">

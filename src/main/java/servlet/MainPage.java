@@ -1,6 +1,6 @@
 package servlet;
 
-import model.dao.impl.TableDaoImpl;
+import model.TableGet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,14 +21,14 @@ public class MainPage extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            while (TableDaoImpl.res.next()) {
-                request.setAttribute("time", TableDaoImpl.data);
-                request.setAttribute("title", TableDaoImpl.title);
+            while (TableGet.resultSetA.next()) {
+                request.setAttribute("time", "TableDaoImpl.data");
+                request.setAttribute("title", "TableDaoImpl.title");
                 //request.setAttribute("Author", "author");
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        request.getRequestDispatcher("main.jsp").forward(request, response);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 }
