@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <HTML>
 <HEAD>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -34,8 +34,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><c:out value="hello, Vasuano" />
-                         </td>
+                    <td> ${time} </td>
                     <td>< ${title}></td>
                     <td>
                         <form action="post.jsp" method="go">
