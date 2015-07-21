@@ -15,19 +15,16 @@
       <font color=#65789a size="6">
           <b>Новая запись</b>
       </font>
-      <form name="reply" id="reply" method="POST" action="null" class="ks">
+      <form action="/NewPost" method="create">
           <div>
-              <p><input type="text" name="Название" id="name" value="" size="79" />
-              <%--<p><textarea rows="1" cols="80" name="reply" id="reply-input-title" class="rtext autosize focused" spellcheck="false" tabindex="1" maxlength="300"></textarea></p></p>--%>
-              <p><textarea rows="30" cols="80" name="reply" id="reply-input-article" class="rtext autosize focused" spellcheck="false" tabindex="1" maxlength="3000"></textarea></p>
+              <p><input type="text" name="title" id="name" value="" size="79" />
+              <p><textarea rows="30" cols="80" name="text" class="rtext autosize focused" spellcheck="false" tabindex="1" maxlength="30000"></textarea></p>
           </div>
-      </form>
-      <form action="post.jsp" method="create">
           <div>
               <p><input id="create" type="submit" value="Создать запись"></p>
           </div>
       </form>
-      <form action="main.jsp" method="back">
+      <form action="/Blog" method="back">
           <div>
               <p><input id="back" type="submit" value="Назад"></p>
           </div>

@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title></title>
+    <title>авождлв</title>
 </head>
 <BODY BGCOLOR="#ffffcc">
 <% if (request.getParameter("name")==

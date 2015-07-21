@@ -15,10 +15,20 @@ public class DBWorker {
 
     private Connection connection = null;
 
+
+
     public DBWorker(){
+
         try {
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
             connection = DriverManager.getConnection(URL,USERNAME,PASSWORD);
         } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
     }

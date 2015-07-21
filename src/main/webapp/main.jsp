@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <HTML>
 <HEAD>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -17,7 +18,7 @@
   <center><b>Блог</b>
     <table border="2" bgcolor=#f9f0ef cellspacing="3" width="60%">
       <div>
-        <form action="new-post.jsp" method="new-post">
+        <form action="app/view/new-post.jsp" method="new-post">
           <p><input id="create" type="submit" value="Создать запись"></p>
         </form>
       </div>
@@ -39,24 +40,27 @@
             </font>
           </td>
         </tr>
+        <jsp:useBean id="listResults" class="java.util.ArrayList" scope="request"/>
+        <c:forEach items="${listResults}" var="cell">
         <tr>
-          <td>${time}</td>
-          <td>${title}</td>
-          <td>
-            <form action="post.jsp" method="go">
-              <p><input id="go1"  type="submit" value="Ссылка"></p>
+          <td width="15%" align="center">
+            <font color=#618c5e>
+                ${cell.getData()}
+            </font>
+          </td>
+          <td width="75%" align="center">
+            <font color=#618c5e>
+                ${cell.getTitle()}
+            </font>
+          </td>
+          <td align="center">
+            <form action="Post" method="go">
+              <p><input name="id"  type="hidden" value=${cell.getId()}></p>
+              <p><input name="idButton"  type="submit" value="Ссылка"></p>
             </form>
           </td>
         </tr>
-        <tr>
-          <td>Uno</td>
-          <td>Uno</td>
-          <td>
-            <form action="post.jsp" method="go">
-              <p><input id="go2" type="submit" value="Ссылка"></p>
-            </form>
-          </td>
-        </tr>
+          </c:forEach>
       </font>
     </table>
   </center>
