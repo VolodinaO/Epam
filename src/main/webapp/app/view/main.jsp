@@ -18,7 +18,7 @@
   <center><b>Блог</b>
     <table border="2" bgcolor=#f9f0ef cellspacing="3" width="60%">
       <div>
-        <form action="app/view/new-post.jsp" method="new-post">
+        <form action="/app/view/new-post.jsp" method="new-post">
           <p><input id="create" type="submit" value="Создать запись"></p>
         </form>
       </div>

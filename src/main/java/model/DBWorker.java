@@ -6,7 +6,9 @@ import java.sql.SQLException;
 
 /**
  * Created by ооо on 15.07.2015.
+ * @author Volodina&Demianenko
  */
+
 public class DBWorker {
 
     private final String URL = "jdbc:mysql://localhost:3306/hodor";
@@ -14,8 +16,6 @@ public class DBWorker {
     private final String PASSWORD = "hodor";
 
     private Connection connection = null;
-
-
 
     public DBWorker(){
 
@@ -32,6 +32,10 @@ public class DBWorker {
             e.printStackTrace();
         }
     }
+
+    /**
+     * @return connection Соединение с БД
+     */
 
     public Connection getConnection() {
         return connection;

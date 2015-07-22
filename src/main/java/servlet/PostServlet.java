@@ -16,10 +16,20 @@ import static model.TableGet.*;
 
 /**
  * Created by ооо on 20.07.2015.
+ * @author Volodina&Demianenko
  */
+
 @WebServlet("/Post")
 public class PostServlet extends HttpServlet {
     int id_c;
+
+    /**
+     *
+     * @param request Запрос
+     * @param response Ответ
+     * @throws ServletException
+     * @throws IOException
+     */
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -27,6 +37,14 @@ public class PostServlet extends HttpServlet {
         String id = request.getParameter("id");
         id_c = Integer.decode(id);
     }
+
+    /**
+     *
+     * @param request Запрос
+     * @param response Ответ
+     * @throws ServletException
+     * @throws IOException
+     */
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);

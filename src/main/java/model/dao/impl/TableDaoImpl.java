@@ -1,18 +1,22 @@
 package model.dao.impl;
 
 import model.DBWorker;
-import model.Table;
 import model.dao.TableDao;
 
 import java.sql.*;
 
 /**
  * Created by ооо on 14.07.2015.
+ * @author Volodina&Demianenko
  */
-//Мы можем брать поля table, а можем их определять через getText и т.п.
-//посмотреть, что будет удобнее передавать
 
 public class TableDaoImpl implements TableDao{
+
+    /**
+     *
+     * @param title Заголовок статьи
+     * @param text Текст статьи
+     */
 
     @Override
     public void addA(String title, String text) {
@@ -30,6 +34,12 @@ public class TableDaoImpl implements TableDao{
         }
     }
 
+    /**
+     *
+     * @param idc Номер статьи
+     * @param comment Комментарий к ней
+     */
+
     @Override
     public void addC(int idc, String comment) {
 
@@ -46,6 +56,11 @@ public class TableDaoImpl implements TableDao{
             e.printStackTrace();
         }
     }
+
+    /**
+     *
+     * @param x id статьи, по которому она удаляется
+     */
 
     @Override
     public void delete(int x) {

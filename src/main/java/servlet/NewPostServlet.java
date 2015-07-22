@@ -14,11 +14,21 @@ import java.io.PrintWriter;
 
 /**
  * Created by ооо on 20.07.2015.
+ * @author Volodina&Demianenko
  */
+
 @WebServlet("/NewPost")
 public class NewPostServlet extends HttpServlet {
 
     String title, text;
+
+    /**
+     *
+     * @param request Запрос
+     * @param response Ответ
+     * @throws ServletException
+     * @throws IOException
+     */
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -27,6 +37,14 @@ public class NewPostServlet extends HttpServlet {
         title = request.getParameter("title");
         text = request.getParameter("text");
     }
+
+    /**
+     *
+     * @param request Запрос
+     * @param response Ответ
+     * @throws ServletException
+     * @throws IOException
+     */
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

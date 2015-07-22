@@ -14,6 +14,8 @@ import java.io.PrintWriter;
 
 /**
  * Created by ооо on 21.07.2015.
+ * @author Volodina&Demianenko
+ * @throws ServletException, IOException
  */
 
 @WebServlet("/Comments")
@@ -21,12 +23,28 @@ public class CommentsServlet extends HttpServlet {
     String comment;
     int id;
 
+    /**
+     *
+     * @param request Запрос
+     * @param response Ответ
+     * @throws ServletException
+     * @throws IOException
+     */
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         comment = request.getParameter("comment");
         id = Integer.decode(request.getParameter("id"));
     }
+
+    /**
+     *
+     * @param request Запрос
+     * @param response Ответ
+     * @throws ServletException
+     * @throws IOException
+     */
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");

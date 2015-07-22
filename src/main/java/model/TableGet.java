@@ -7,9 +7,15 @@ import java.util.ArrayList;
 
 /**
  * Created by ооо on 16.07.2015.
+ * @author Volodina&Demianenko
  */
+
 public class TableGet {
 
+    /**
+     *
+     * @return tables - Массив с данными всех статей
+     */
 
     public static ArrayList<Table> tableA() {
         DBWorker worker = new DBWorker();
@@ -18,7 +24,6 @@ public class TableGet {
         Statement statement;
         ArrayList<Table> tables = new ArrayList<Table>();
 
-        //Table tableArticles = null;
         try {
             statement = worker.getConnection().createStatement();
             ResultSet resultSetA = statement.executeQuery(queryA);
@@ -30,15 +35,18 @@ public class TableGet {
                 tableArticles.setTitle(resultSetA.getString(3));
                 tableArticles.setText(resultSetA.getString(4));
                 tables.add(tableArticles);
-
-                //не забыть заменить на нужное >>
-                //System.out.println(tableArticles.getId()); //пример вывода всех id
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return tables;
     }
+
+    /**
+     *
+     * @param n номер(id) статьи, по которому берётся её содержимое
+     * @return tableArticles. Статья по заданному id с её содержимым
+     */
 
     public static Table tableA(int n) {
         DBWorker worker = new DBWorker();
@@ -47,26 +55,27 @@ public class TableGet {
         Statement statement;
         Table tableArticles = new Table();
 
-        //Table tableArticles = null;
         try {
             statement = worker.getConnection().createStatement();
             ResultSet resultSetA = statement.executeQuery(queryA);
 
             while (resultSetA.next()) {
-                //Table tableArticles = new Table();
                 tableArticles.setId(resultSetA.getInt(1));
                 tableArticles.setData(resultSetA.getString(2));
                 tableArticles.setTitle(resultSetA.getString(3));
                 tableArticles.setText(resultSetA.getString(4));
-
-                //не забыть заменить на нужное >>
-                //System.out.println(tableArticles.getId()); //пример вывода всех id
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return tableArticles;
     }
+
+    /**
+     *
+     * @param n номер(id) статьи
+     * @return tables. Массив всех комментариев к статье по заданному id
+     */
 
     public static ArrayList<Table> tableC(int n) {
         DBWorker worker = new DBWorker();
@@ -85,8 +94,6 @@ public class TableGet {
                 tableComments.setNum(resultSetC.getInt(2));
                 tableComments.setComm(resultSetC.getString(3));
                 tables.add(tableComments);
-                //не забыть заменить на нужное >>
-               // System.out.println(tableComments.getComm()); //пример вывода всех комментов
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -94,17 +101,4 @@ public class TableGet {
         return tables;
     }
 
-    public static void main(String[] args) {
-
-      //  ArrayList<Table> table = tableC(4);
-       // TableDao tableDao = new TableDaoImpl();
-       // tableDao.addC(table, 4, "comment from idea");
-       // tableDao.addA(table, "TITLE", "TEXT");
-       // tableDao.delete(table, 7);
-
-       // System.out.println(table.get(0).getComm());
-        //tableA();
-       // System.out.println("-------------------");
-       // tableC(4);
-    }
 }
